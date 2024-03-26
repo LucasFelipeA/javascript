@@ -14,11 +14,31 @@
 </head>
 <body>
     <h1>Iniciando estudos com DOM</h1>
-    <p>Aqui vai o resultado</p>
-    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+    <p class="id" id="class">Aqui vai o resultado</p>
+    <p name="paragraph">Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+    <p id="gen">Mais uma linha genérica</p>
     <div class="div">Clique em mim</div>
     <script>
-        window.document.head.title("Segundos passos com DOM")
+        var corpo = window.document.body.style
+        var h1 = window.document.getElementsByTagName('h1')[0].style
+        // Coleta a Tag dentro do HTML, OBRIGATÓRIA a Indexação
+        var p_gen = window.document.getElementById('gen').style
+        // Coleta a Tag com id especificado
+        var p_p = window.document.getElementsByName('paragraph')[0].style
+        // Coleta a Tag com o nome especificado OBRIGATÓRIA a Indexação
+        var div = window.document.getElementsByClassName('div')[0].style
+        // Coleta a Tag com a class especificada, OBRIGATÓRIA a Indexação
+        var p = window.document.querySelector('p.id').style
+        // Coleta a Tag com id ou class especificado
+        h1.backgroundColor = 'blue'
+        p_gen.background = 'black'
+        p_p.background = 'hotpink'
+        div.background = 'purple'
+        p.background = 'forestgreen'
+
+        function print(a){
+        document.write(`<p>${a}</p>`)}
+        print('ABCDE')
     </script>
 </body>
 </html>

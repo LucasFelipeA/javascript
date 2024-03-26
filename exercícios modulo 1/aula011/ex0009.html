@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoAnswer</title>
+</head>
+<body>
+    <h1>Estrangeiro ou Brasileiro!!!</h1>
+    <p>Nos diga de que país você é: </p>
+    <input type="text" name="txt" id="txt">
+    <input type="button" value="Enviar" onclick="resposta()">
+    <p id="res"></p>
+    <script>
+        function resposta(){
+            var txtp = document.querySelector('input#txt')
+            var txt = String(txtp.value)
+            var res = document.querySelector('p#res')
+            if(txt.toLowerCase() == 'brasil' || txt.toLowerCase() == 'brazil'){
+                res.innerHTML = `Parabéns, você é <strong>Brasileiro</strong> 😎`
+            }else{
+                res.innerHTML = `Você é Estrangeiro, acontece...`
+            }      
+        }
+    </script>
+</body>
+</html>
