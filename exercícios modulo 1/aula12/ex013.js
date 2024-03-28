@@ -43,4 +43,3 @@ break
       console.log('O número não está na lista')
 break
 }
-new File('.txt','Abc')

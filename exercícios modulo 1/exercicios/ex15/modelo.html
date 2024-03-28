@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora do Dia</title>
+    <style>
+        body{
+            text-align: center;
+            background-color: rgb(97, 97, 233);
+        }
+        header{
+            font: bold 1.3em Arial;
+            color: white;
+        }
+        main{
+            margin: auto;
+            width: 500px;
+            background-color: white;
+            padding: 5px 20px 20px 20px;
+            border-radius: 20px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.432);
+        }
+        p{
+            font: 500 1.5em Arial;
+        }
+        footer{
+            font: bold italic 1.1em Arial;
+            color: white;
+        }
+        img{width: 250px; height: 250px; border-radius: 50%;}
+    </style>
+</head>
+<body>
+    <header><h1>Verificador de Idade</h1></header>
+    <main>
+        <section style="text-align: left;">
+            <div>
+                <p>Ano de Nascimento: <input type="number" name="numtxt" id="numtxt"></p>
+                <p>Sexo:
+                    <input type="radio" name="radsex" id="mas" checked min="1"> <label for="masc">Masculino</label>
+                    <input type="radio" name="radsex" id="fem"> <label for="fem">Feminino</label>
+                </p>
+                <p><input type="button" value="Verificar" onclick="verificar()"></p>
+            </div>
+            <div id="res">
+                <p>Preencha os dados acima para ver o resultado!</p>
+            </div>
+        </section>
+    </main>
+    <footer style="padding-top: 15px;">&copy;CursoemVideo</footer>
+    <script>
+        var corpo = document.body.style
+        function verificar(){
+            var data = new Date()
+            var ano = data.getFullYear()
+            var fanoL = document.getElementById('numtxt')
+            var fano = Number(fanoL.value)
+            var res = document.getElementById('res')
+            res.style.textAlign = 'center'
+            if (fano <= 0 || fano> ano){
+                alert('[[ERROR]] Verifique os dados e tente novamente [[ERROR]]',)
+            }else {
+                var fsex = document.getElementsByName('radsex')
+                var idade = ano - fano
+                var genero = ''
+                var img = document.createElement('img')
+            img.setAttribute('id','foto')
+                if (fsex[0].checked){
+                    if(idade >=0 && idade < 10){ // Criança
+                        genero = 'um menino'
+                        img.setAttribute('src', 'image/menino.jpg')
+                    }else if (idade < 21){ // Jovem
+                        genero = 'um jovem'
+                        img.setAttribute('src','https://static.wixstatic.com/media/af17e7_a1630eb2ac16468d87046078733ddaf0~mv2.jpg/v1/fill/w_460,h_340,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Jovem%20Aprendiz.jpg')
+                    }else if (idade < 50){ // Adulto
+                        genero = 'um homem'
+                        img.setAttribute('src','image/homem.jpg')
+                    }else{ // Idoso
+                        genero = 'um idoso'
+                        img.setAttribute('src','image/idoso.jpg')
+                    }
+                }else if (fsex[1].checked){
+                    if(idade >=1 && idade <10){ // Criança
+                        genero = 'uma menina'
+                        img.setAttribute('src','image/menina.jpg')
+                    }else if (idade < 21){ // Jovem
+                        genero = 'uma jovem'
+                        img.setAttribute('src','https://img.freepik.com/fotos-premium/closeup-retrato-de-uma-jovem-bonita-e-feliz_105609-5523.jpg')
+                    }else if (idade < 50){ // Adulto
+                        genero = 'uma mulher'
+                        img.setAttribute('src','image/mulher.jpg')
+                    }else{ // Idoso
+                        genero = 'uma idosa'
+                        img.setAttribute('src','image/idosa.jpg')
+                    }
+                }
+                res.innerHTML = `<p>Detectamos ${genero} de ${idade} anos.</p>`
+                res.appendChild(img)
+            }
+        }
+</script>
+</body>
+</html>

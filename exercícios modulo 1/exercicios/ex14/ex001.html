@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora do Dia</title>
+    <style>
+        body{
+            text-align: center;
+            background-color: rgb(97, 97, 233);
+        }
+        header{
+            font: bold 1.3em Arial;
+            color: white;
+        }
+        main{
+            margin: auto;
+            width: 500px;
+            background-color: white;
+            padding: 5px 20px 20px 20px;
+            border-radius: 20px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.432);
+        }
+        p{
+            font: 500 1.5em Arial;
+        }
+        footer{
+            font: bold italic 1.1em Arial;
+            color: white;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body onload="carregar()">
+    <header><h1>Hora do Dia</h1></header>
+    <main>
+        <section>
+            <div id="msg">
+                <p id="horario">[[ERRO]]</p>
+            </div>
+        <div>
+            <img src='image/Manha.png' alt="" id="abacate">
+        </div>
+    </section>
+    </main>
+    <footer>&copy;CursoemVideo</footer>
+    <script>
+        function carregar() {
+            var corpo = document.body.style
+        var agora = new Date()
+        var hora = agora.getHours()
+        var p = document.getElementById('horario')
+        var img = document.querySelector('img#abacate')
+        p.innerHTML = `Agora são ${hora} horas`    
+        if(hora>=6&&hora<12){ // Manhã
+            img.src = 'image/manha.png'
+            corpo.background = '#EAD8CE'
+        } else if(hora >=12&&hora < 18){ // Tarde
+            img.src = 'image/tarde.png'
+            corpo.background = '#CEC5C0'
+        }else{
+            img.src = 'image/noite.png'
+            corpo.background ='#C59162'
+        }
+        }
+</script>
+</body>
+</html>
