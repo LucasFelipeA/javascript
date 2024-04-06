@@ -7,50 +7,20 @@ function contar() {
     var passo = Number(passotxt.value)
     var res = document.getElementById('res')
     res.textContent = ``
-    if (ini < fim){
-        do{
-            if(passo == 0 || passo == ''){
-                alert(`Passo = 0, Impossível contar. Passo = 1 `)
-                passo = 1
-                continue
-            }
-            else if (initxt.value == ''){
-                res.innerHTML += `<p>[ERROR] Início não determinado [ERROR]</p>`
-                break
-            }
-            if(ini < fim){
-                res.textContent += `${ini} 👉`
-                ini += passo
-                if(ini > fim){
-                res.textContent += ` 🏁`
-                }
-            }else{
-                res.textContent += `${ini} 🏁`
-                ini += passo
-            }
-            }while(ini <= fim)
+    if (initxt.value.length == 0 || passotxt.value.length == 0 || fimtxt.value.length == 0){
+        alert("[ERROR] Valores invalidos [ERROR]")
+        if(passotxt.value.length == 0){
+            alert("Passo = 0 alterando para Passo = 1")
+            passo = 1
+        }
     }
-    else{
-        do{
-            if(passo == 0 || passo == ''){
-                alert(`Passo = 0, Impossível contar. Passo = 1 `)
-                passo = 1
-                continue
-            }
-            else if (initxt.value == ''){
-                res.innerHTML += `<p>[ERROR] Início não determinado [ERROR]</p>`
-                break
-            }
-            if(ini > fim){
-                res.textContent += `${ini} 👉`
-                ini -= passo
-                if(ini < fim){
-                res.textContent += ` 🏁`
-                }
-            }else{
-                res.textContent += `${ini} 🏁`
-                ini -= passo
-            }
-            }while(ini >= fim)
+    if(ini<fim){
+        for(c = ini; c<=fim;c+=passo){
+            res.textContent += ` ${c} 👉`
+    }}else{
+        for(c = ini; c>=fim;c-=passo){
+            res.textContent += ` ${c} 👉`
+        }   
     }
+    res.textContent += `🏁`
 }
