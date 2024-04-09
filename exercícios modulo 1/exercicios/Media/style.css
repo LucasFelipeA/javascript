@@ -1,0 +1,15 @@
+:root{
+    --neutro: rgb(217, 224, 219);
+}
+body{
+    background-color: var(--neutro);
+    text-align: center;
+}
+section{
+    background-color: white;
+    border-radius: 20px;
+    text-align: left;
+    padding: 20px;
+    margin: auto;
+    width: 400px;
+}
