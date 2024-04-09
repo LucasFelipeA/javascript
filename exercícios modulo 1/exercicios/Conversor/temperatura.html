@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Temperatura</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header><h1 id="title">Celsius para Fahrenheit</h1></header>
+    <main>
+        <section>
+            <input type="number" name="numtxt" id="numtxt">
+            <select name="sel" id="sel" onchange="mudar()">
+                <option value="c">Cº</option>
+                <option value="f">Fº</option>
+            </select>
+            <p style="margin-top: 5px; margin-left: -30px;">
+                <input type="button" value="Converter" onclick="conv()">
+            </p>
+            <p id="res">
+    
+            </p>
+        </section>
+    </main>
+    <footer>&copy; Halitus</footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+:root{
+    --quente: rgb(223, 195, 144);
+    --frio: rgb(118, 179, 214);
+    --neutro: rgb(217, 224, 219);
+}
+body{
+    background-color: var(--neutro);
+    text-align: center;
+}
+section{
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    margin: auto;
+    width: 400px;
+}
