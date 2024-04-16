@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorimetria</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header><h1>Calculadora de Calorimetria</h1></header>
+    <main>
+        <section>
+            Coloque os dados necessários para o cálculo:
+            <p>m: <input type="text" name="conta" id="massa"><select name="peso" id="peso">
+                <option value="kg">kg</option>
+                <option value="g">g</option>
+            </select></p>
+            <p>c: <input type="number" name="conta" id="calor"></p>
+            <p>ΔT: <input type="number" name="conta" id="temp"></p>
+            <p><input type="button" value="Calcular" onclick="calc()"></p>
+        </section>
+        <hr>
+        <section id="res">
+            Resposta aqui
+        </section>
+    </main>
+    <footer>&copy;CursoemVideo</footer>
+    <script src="script.js"></script>
+</body>
+</html>

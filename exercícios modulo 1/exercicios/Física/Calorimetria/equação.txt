@@ -1,0 +1,48 @@
+1. "Determine a quantidade de calor necessária para elevar de 20°C para 100°C uma panela de ferro de 400 g que possui calor específico de 450 J/Kg.°C
+"
+2. Dados da questão
+
+Massa: m = 400 g
+
+Temperatura inicial = 20°C
+
+Temperatura final = 100 °C
+
+Variação de temperatura: ΔT = 100 – 20 = 80°C
+
+Calor específico do ferro: c = 450 J/Kg.°C
+
+3. Comando da questão
+
+Determinar a quantidade de calor que será fornecida ao ferro para que a sua temperatura eleve-se de 20°C para 100°C.
+
+4. Conferindo as unidades
+
+O calor específico do ferro foi fornecido com base nas unidades joule (J), quilograma (kg) e graus Celsius (°C). Como a massa da panela foi fornecida em gramas, ela deve ser transformada para quilograma.
+
+Massa: m = 400g ÷ 1000 = 0,4 Kg
+
+5. Equação
+
+A equação a ser utilizada é a que determina a quantidade de calor sensível fornecida ou retirada de um corpo.
+
+Q = m.c.ΔT
+
+Q = quantidade de calor;
+
+m = massa;
+
+c = calor específico;
+
+ΔT = variação de temperatura.
+
+Resolução:
+
+Q = m.c.ΔT
+
+Q = 0,4 . 450 . 80
+
+Q = 14.400 J
+
+Serão necessários 14.400 J de calor para aquecer a panela de ferro de 20°C para 100°C.
+
